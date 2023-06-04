@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function getAction()
     {
-        $categories = Category::where('id', 1)->get();
+        $categories = Category::all();
         dd($categories->toArray());
     }
 }

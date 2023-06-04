@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,14 +30,17 @@ Route::get('/register', function () {
 });
 
 //home page
-Route::get('/home', function () {
-    return view('home');
-});
-
+Route::get('/home',[HomeController::class, 'index']);
 //about page
 Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/products',[ProductController::class, 'index']);
+
+Route::get('/products/{slug}',[ProductController::class, 'show']);
+
 //categories
 Route::get('/categories',[CategoryController::class, 'getAction']);
+
+
