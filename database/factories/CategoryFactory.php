@@ -23,5 +23,5 @@ class CategoryFactory extends Factory
             'description'=> fake()->text(),
             'image'=> fake()->imageUrl(),
         ];
-    }
+    }   
 }
